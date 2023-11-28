@@ -73,7 +73,7 @@ async function fetchGallery() {
 }
 
 function onRenderGallery(elements) {
-  const markup = elements
+  const markupGallery = elements
     .map(
       ({
         webformatURL,
@@ -110,6 +110,6 @@ function onRenderGallery(elements) {
       }
     )
     .join('');
-  refs.galleryContainer.insertAdjacentHTML('beforeend', markup);
+  refs.galleryContainer.insertAdjacentHTML('beforeend', markupGallery);
   lightbox.refresh();
 }
