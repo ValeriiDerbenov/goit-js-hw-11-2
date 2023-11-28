@@ -88,7 +88,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  border-radius: 16px;
+  // border-radius: 16px;
 }
 a {
   text-decoration: none;
@@ -256,7 +256,7 @@ p {
   }
 }
 
-.sl-wrapper{
+.sl-wrapper .sl-image .sl-caption {
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
