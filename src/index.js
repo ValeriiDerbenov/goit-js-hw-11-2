@@ -10,6 +10,7 @@ const refs = {
   loadMoreBtn: document.querySelector('.load-more'),
 }
 let isShown = 0
+let firstLoad = true
 const newsApiService = new NewsApiService()
 
 refs.searchForm.addEventListener('submit', onSearch)
@@ -36,11 +37,11 @@ function onSearch(element) {
   }
 
   isShown = 0
+  firstLoad = true
   fetchGallery()
 }
 
 function onLoadMore() {
-  newsApiService.incrementPage()
   fetchGallery()
 }
 
@@ -65,13 +66,14 @@ async function fetchGallery() {
     refs.loadMoreBtn.classList.remove('is-hidden')
   }
 
-  if (isShown < total && isShown <= 40) {
+  if (firstLoad == true && isShown > 0) {
     Notify.success(`Hooray! We found ${total} images !!!`)
   }
 
-  if (isShown >= total) {
+  if (isShown >= total && firstLoad == false) {
     Notify.info("We're sorry, but you've reached the end of search results.")
   }
+  firstLoad = false
 }
 
 async function onRenderGallery(elements) {

@@ -1,4 +1,12 @@
-const galleryTemplate = (webformatURL, largeImageURL, tags, likes, views, comments, downloads) => `<div class="photo-card">
+const galleryTemplate = (
+  webformatURL,
+  largeImageURL,
+  tags,
+  likes,
+  views,
+  comments,
+  downloads
+) => `<div class="photo-card">
 	<a href="${largeImageURL}">
 		<img class="photo-img" src="${webformatURL}" alt="${tags}" loading="lazy" />
 	</a>
@@ -20,6 +28,6 @@ const galleryTemplate = (webformatURL, largeImageURL, tags, likes, views, commen
 			${downloads}
 		</p>
 	</div>
-</div>`
+</div>`;
 
-module.exports = galleryTemplate
+module.exports = galleryTemplate;
